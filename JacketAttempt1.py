@@ -58,18 +58,4 @@ x_poly = poly_reg.fit_transform(x)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(x_poly, y)
 
-plt.scatter(x, y, color = 'red')
-plt.plot(x, lin_reg.predict(x), color = 'blue')
-plt.title("Linear Regression")
-plt.xlabel("Position Level")
-plt.ylabel("Salary")
-plt.show()
 
-
-x_grid = np.arange(min(x), max(x), 0.1)
-x_grid = x_grid.reshape((len(x_grid), 1))
-plt.scatter(x, y, color = 'red')
-plt.plot(x_grid, lin_reg_2.predict(poly_reg.fit_transform(x_grid)), color = 'blue')
-plt.title("Polynomial Regression")
-plt.xlabel("Position Level")
-plt.ylabel("Salary")
